@@ -51,10 +51,6 @@ class mtxInfoPreferenceController(context: Context) : AbstractPreferenceControll
         return getPropertyOrDefault(PROP_ARCADIA_BUILD_VERSION)
     }
 
-    private fun getArcadiaStorage(): String {
-        return SystemProperties.get(PROP_ARCADIA_RAM, "0gb") + "/" + SystemProperties.get(PROP_ARCADIA_STORAGE, "0gb")
-    }
-
     private fun getArcadiaChipset(): String {
         return getPropertyOrDefault(PROP_ARCADIA_CHIPSET)
     }
@@ -118,7 +114,6 @@ class mtxInfoPreferenceController(context: Context) : AbstractPreferenceControll
         hwInfoPreference.apply {
             findViewById<TextView>(R.id.device_name).text = getDeviceName()
             findViewById<TextView>(R.id.device_chipset).text = getArcadiaChipset()
-            findViewById<TextView>(R.id.device_storage).text = getArcadiaStorage()
             findViewById<TextView>(R.id.device_battery_capacity).text = getArcadiaBattery()
             findViewById<TextView>(R.id.device_resolution).text = getArcadiaResolution()
             findViewById<TextView>(R.id.device_name_model).text = getDeviceName()
@@ -149,7 +144,6 @@ class mtxInfoPreferenceController(context: Context) : AbstractPreferenceControll
             R.id.android_version_details to Intent().setComponent(ComponentName("com.android.settings", "com.android.settings.Settings\$FirmwareVersionActivity"))
            // R.id.chipset_info to Intent().setComponent(ComponentName("com.android.settings", "com.android.settings.Settings\$DevRunningServicesActivity")),
           //  R.id.display_info to Intent().setComponent(ComponentName("com.android.settings", "com.android.settings.Settings\$DisplaySettingsActivity")),
-           // R.id.storage_info to Intent().setComponent(ComponentName("com.android.settings", "com.android.settings.Settings\$StorageDashboardActivity"))
        )
 
         clickMap.forEach { (id, intent) ->
@@ -173,7 +167,6 @@ class mtxInfoPreferenceController(context: Context) : AbstractPreferenceControll
         private const val KEY_SW2_INFO = "my_device_sw2_header"
         private const val KEY_DEVICE_INFO = "my_device_info_header"
         
-        private const val KEY_STORAGE = "device_storage"
         private const val KEY_CHIPSET = "device_chipset"
         private const val KEY_BATTERY = "device_battery_capacity"
         private const val KEY_DISPLAY = "device_resolution"
@@ -185,8 +178,6 @@ class mtxInfoPreferenceController(context: Context) : AbstractPreferenceControll
         private const val PROP_ARCADIA_BUILD_TYPE = "ro.arcadia.build.variant"
         private const val PROP_ARCADIA_BUILD_VERSION = "ro.arcadia.version"
         private const val PROP_ARCADIA_CHIPSET = "ro.arcadia.chipset"
-        private const val PROP_ARCADIA_STORAGE = "ro.arcadia.storage"
-        private const val PROP_ARCADIA_RAM = "ro.arcadia.ram"
         private const val PROP_ARCADIA_BATTERY = "ro.arcadia.battery"
         private const val PROP_ARCADIA_DISPLAY = "ro.arcadia.display_resolution"
         private const val PROP_ARCADIA_SECURITY = "ro.build.version.security_patch"
