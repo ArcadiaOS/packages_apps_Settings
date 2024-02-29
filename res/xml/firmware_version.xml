@@ -21,10 +21,10 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
-    <!-- crDroid logo -->
+    <!-- ArcadiaOS logo -->
     <com.android.settingslib.widget.LayoutPreference
-        android:layout="@layout/crdroid_logo"
-        android:key="crdroid_logo"
+        android:layout="@layout/arcadia_logo"
+        android:key="arcadia_logo"
         android:selectable="false" />
 
     <!-- Device name -->
