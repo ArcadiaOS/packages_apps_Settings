@@ -34,12 +34,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-                android:textColor="@color/mtx_text_color_primary"
-                style="@style/mtx_text_style_h6" />
+                android:textColor="@color/arc_text_color_primary"
+                style="@style/arc_text_style_h6" />
 
             <TextView
                 android:id="@android:id/summary"
-                style="@style/mtx_text_style_body1"
+                style="@style/arc_text_style_body1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@android:id/title"
@@ -48,7 +48,7 @@
                 android:textStyle="bold|italic"
                 android:layout_marginTop="2.0dip"
                 android:maxLines="4"
-                android:textColor="@color/mtx_text_color_secondary" />
+                android:textColor="@color/arc_text_color_secondary" />
         </RelativeLayout>
 
         <FrameLayout

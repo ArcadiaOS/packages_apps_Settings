@@ -142,7 +142,6 @@
             android:order="43"
             android:title="@*lineageos.platform:string/lineage_version"
             android:summary="@string/summary_placeholder"
-            settings:enableCopying="true"
             android:icon="@drawable/ic_arcadia"
             settings:position="bottom"
             settings:enableCopying="false"
